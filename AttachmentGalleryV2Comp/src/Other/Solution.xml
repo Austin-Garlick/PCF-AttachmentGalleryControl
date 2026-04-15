@@ -2,32 +2,32 @@
 <ImportExportXml version="9.1.0.643" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <!-- Unique Name of Cds Solution-->
-    <UniqueName>AttachmentGallerySol</UniqueName>
+    <UniqueName>AttachmentGalleryV2Comp</UniqueName>
     <LocalizedNames>
       <!-- Localized Solution Name in language code -->
-      <LocalizedName description="AttachmentGallerySol" languagecode="1033" />
+      <LocalizedName description="AttachmentGalleryV2Comp" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.1</Version>
+    <Version>1.0</Version>
     <!-- Solution Package Type: Unmanaged(0)/Managed(1)/Both(2)-->
     <Managed>2</Managed>
     <Publisher>
       <!-- Unique Publisher Name of Cds Solution -->
-      <UniqueName>dancingwithcrm</UniqueName>
+      <UniqueName>AustinGarlick</UniqueName>
       <LocalizedNames>
         <!-- Localized Cds Publisher Name in language code-->
-        <LocalizedName description="dancingwithcrm" languagecode="1033" />
+        <LocalizedName description="AustinGarlick" languagecode="1033" />
       </LocalizedNames>
       <Descriptions>
         <!-- Description of Cds Publisher in language code -->
-        <Description description="dancingwithcrm" languagecode="1033" />
+        <Description description="AustinGarlick" languagecode="1033" />
       </Descriptions>
       <EMailAddress xsi:nil="true"></EMailAddress>
       <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
       <!-- Customization Prefix for the Cds Publisher-->
-      <CustomizationPrefix>dwcrm</CustomizationPrefix>
+      <CustomizationPrefix>ag</CustomizationPrefix>
       <!-- Derived Option Value Prefix for the Customization Prefix of Cds Publisher -->
-      <CustomizationOptionValuePrefix>32659</CustomizationOptionValuePrefix>
+      <CustomizationOptionValuePrefix>57343</CustomizationOptionValuePrefix>
       <Addresses>
         <!-- Address of the Publisher-->
         <Address>

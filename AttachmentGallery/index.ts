@@ -21,7 +21,7 @@ interface IPdfState {
 	zoom: number
 }
 
-export class AttachmentGallery implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class AttachmentGalleryV2 implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private _previewImg: HTMLImageElement;
 	private _thumbnailsGallery: HTMLDivElement;
 	private _container: HTMLDivElement;
@@ -368,7 +368,7 @@ export class AttachmentGallery implements ComponentFramework.StandardControl<IIn
     /**
     * Generate Image Element src url
     * @param fileType file extension
-    * @param fileContent file content, base 64 format
+    * @param fileContent 
     */
     private generateImageSrcUrl(fileType: string, fileContent: string): string {
         return "data:" + fileType + ";base64, " + fileContent;
@@ -445,14 +445,20 @@ export class AttachmentGallery implements ComponentFramework.StandardControl<IIn
         if (result.length > 0) {
             let count = 0;
             for (let i = 0; i < result.length; i++) {
+                let galleryImgDiv = document.createElement('div');
                 let newImg = document.createElement('img');
+                let newImgFileName = document.createElement('h5');
                 newImg.className = "thumbnail";
+                newImgFileName.className = "thumbnail_title"
                 newImg.src = result[i].mimeType.indexOf('pdf') == -1
                     ? this.generateImageSrcUrl(result[i].mimeType, result[i].documentBody)
                     : this.pdfImageSrc;
                 newImg.alt = count.toString();
                 newImg.addEventListener('click', this.setPreviewFromThumbnail);
-                this._thumbnailsGallery.appendChild(newImg);
+                newImgFileName.innerHTML = result[i].filename;
+                galleryImgDiv.appendChild(newImg);
+                galleryImgDiv.appendChild(newImgFileName);
+                this._thumbnailsGallery.appendChild(galleryImgDiv);
                 count++;
             }
 
@@ -499,7 +505,7 @@ export class AttachmentGallery implements ComponentFramework.StandardControl<IIn
             : this.pdfImageSrc;
 
         this._modalHeaderText.innerHTML = (currentNoteNumber + 1).toString() + " / " + this._notes.length.toString()
-            + " " + currentNote.title;
+            + " " + currentNote.filename;
 
         if (this.modalState.isOpen) {
             this.setModalImage(currentNote);

@@ -6,6 +6,7 @@
     padding: 5px;
     margin: 5px;
     height: 100px;
+    width: 100px;
 }
 
 /* Add a hover effect (blue shadow) */
@@ -14,7 +15,9 @@
 }
 
 .thumbnailsList {
-    display: block;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     position: relative;
     height: auto;
     max-width: 100%;
@@ -22,6 +25,13 @@
     overflow-x: auto;
     word-wrap: normal;
     white-space: nowrap;
+}
+
+.thumbnail_title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .preview-section {
